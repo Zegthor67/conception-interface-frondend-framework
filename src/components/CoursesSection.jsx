@@ -49,6 +49,8 @@ function CoursesSection({ limit }) {
           isLoading={isLoading}
           error={error}
           items={visibleCourses}
+          totalCount={results.length}
+          itemLabel="formation"
           emptyMessage="Aucune formation ne correspond à votre recherche."
           renderItem={(course) => (
             <CourseCard course={course} onShowDetails={setSelectedCourse} />

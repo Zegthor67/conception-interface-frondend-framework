@@ -48,6 +48,8 @@ function ProjectsSection({ limit }) {
           isLoading={isLoading}
           error={error}
           items={visibleProjects}
+          totalCount={results.length}
+          itemLabel="projet"
           emptyMessage="Aucun projet ne correspond à votre recherche."
           renderItem={(project) => (
             <ProjectCard project={project} onShowDetails={setSelectedProject} />

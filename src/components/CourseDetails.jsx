@@ -30,7 +30,7 @@ function CourseDetails({ course }) {
       <TechList technologies={course.technologies} />
 
       {course.available ? (
-        <Link to={`/inscription/${course.id}`} className="btn btn-danger mt-3">
+        <Link to={`/inscription/${course.id}`} className="btn btn-main mt-3">
           S'inscrire à cette formation
         </Link>
       ) : (

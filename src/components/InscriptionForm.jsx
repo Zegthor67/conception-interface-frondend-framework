@@ -121,7 +121,7 @@ function InscriptionForm({ courses, initialCourseId = '' }) {
         {errors.acceptTerms && <div className="invalid-feedback">{errors.acceptTerms}</div>}
       </div>
 
-      <button type="submit" className="btn btn-danger btn-lg">
+      <button type="submit" className="btn btn-main btn-lg">
         Envoyer mon inscription
       </button>
     </form>

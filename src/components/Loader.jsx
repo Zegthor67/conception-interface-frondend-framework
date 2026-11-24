@@ -4,7 +4,7 @@
 function Loader({ message = 'Chargement...' }) {
   return (
     <div className="loader" role="status">
-      <div className="spinner-border text-danger"></div>
+      <div className="spinner-border loader-spinner"></div>
       <p className="loader-text">{message}</p>
     </div>
   )

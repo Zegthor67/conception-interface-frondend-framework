@@ -1,9 +1,14 @@
 :root {
   --primary: #ff3d2e;
+  --primary-hover: #e02a1c;
   --secondary: #ffc107;
   --dark: #1b1b1b;
   --light: #fff8f0;
   --text: #222222;
+  --grey: #666666;
+  --border: #e6e0d8;
+  --radius: 10px;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
 body {
@@ -24,10 +29,57 @@ body {
   flex: 1;
 }
 
+/* ----- Boutons ----- */
+.btn {
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.btn-main {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-main:hover,
+.btn-main:focus {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #ffffff;
+}
+
+.btn-yellow {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--dark);
+}
+
+.btn-yellow:hover {
+  background-color: #e6ac00;
+  border-color: #e6ac00;
+  color: var(--dark);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(255, 61, 46, 0.2);
+}
+
+.form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
 /* ----- Header ----- */
 .site-header {
   background-color: #ffffff;
   border-bottom: 4px solid var(--primary);
+}
+
+.site-header .navbar {
+  padding: 0.9rem 0.75rem;
 }
 
 .site-logo {
@@ -44,23 +96,30 @@ body {
 .site-header .nav-link {
   font-weight: 500;
   color: var(--dark);
+  padding: 0.4rem 0.9rem !important;
+  border-radius: 6px;
 }
 
-.site-header .nav-link.active,
 .site-header .nav-link:hover {
   color: var(--primary);
+}
+
+.site-header .nav-link.active {
+  background-color: var(--primary);
+  color: #ffffff;
 }
 
 /* ----- Hero ----- */
 .hero {
   background-color: var(--primary);
   color: #ffffff;
-  padding: 5rem 0;
+  padding: 5.5rem 0;
 }
 
 .hero-title {
   font-weight: 700;
   font-size: 2.8rem;
+  max-width: 750px;
   animation: fadeIn 1s ease-in;
 }
 
@@ -94,9 +153,13 @@ body {
   padding: 3rem 0;
 }
 
+.loader-spinner {
+  color: var(--primary);
+}
+
 .loader-text {
   margin-top: 1rem;
-  color: #666666;
+  color: var(--grey);
 }
 
 /* ----- Bandeau en haut des pages ----- */
@@ -109,6 +172,11 @@ body {
 
 .page-banner h1 {
   font-weight: 700;
+}
+
+.page-banner p {
+  margin: 0;
+  color: #cccccc;
 }
 
 /* ----- Sections projets / formations ----- */
@@ -125,11 +193,13 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
 .section-header h2 {
   font-weight: 700;
+  margin: 0;
   border-left: 6px solid var(--primary);
   padding-left: 0.8rem;
 }
@@ -137,18 +207,38 @@ body {
 .section-header a {
   color: var(--primary);
   font-weight: 600;
+  text-decoration: none;
+}
+
+.section-header a:hover {
+  text-decoration: underline;
 }
 
 .section-toolbar {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 2rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* sur fond blanc, on met la barre en couleur claire pour qu'elle ressorte */
+.items-section-alt .section-toolbar {
+  background-color: var(--light);
+}
+
+.results-count {
+  color: var(--grey);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .empty-message {
   text-align: center;
-  color: #666666;
+  color: var(--grey);
   padding: 2rem 0;
 }
 
@@ -172,17 +262,29 @@ body {
 .item-card {
   height: 100%;
   border: 2px solid var(--dark);
-  border-radius: 8px;
+  border-radius: var(--radius);
   overflow: hidden;
 }
 
 .item-card:hover {
   border-color: var(--primary);
+  box-shadow: var(--shadow);
 }
 
 .item-card-img {
   height: 180px;
   object-fit: cover;
+}
+
+/* colonne pour pouvoir pousser les technos en bas de la carte */
+.item-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.item-card-body .tech-list {
+  margin-top: auto;
 }
 
 .item-category {
@@ -202,12 +304,18 @@ body {
 }
 
 .item-info {
-  color: #666666;
+  color: var(--grey);
   font-size: 0.9rem;
+  margin-bottom: 0.6rem;
 }
 
+/* coupe la description à 3 lignes pour que les cartes aient la même taille */
 .item-description {
   font-size: 0.95rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .item-card-footer {
@@ -215,12 +323,19 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
+  border-top: 1px solid var(--border);
+  padding: 0.8rem 1rem;
 }
 
 .item-price {
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--primary);
+}
+
+.item-year {
+  font-weight: 600;
+  color: var(--grey);
 }
 
 .tech-list {
@@ -255,10 +370,10 @@ body {
 .modal-box {
   background-color: #ffffff;
   width: 100%;
-  max-width: 650px;
+  max-width: 700px;
   max-height: 90vh;
   overflow-y: auto;
-  border-radius: 8px;
+  border-radius: var(--radius);
   border-top: 6px solid var(--primary);
 }
 
@@ -266,8 +381,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid var(--border);
 }
 
 .modal-header-custom h2 {
@@ -283,12 +399,12 @@ body {
 .item-details h3 {
   font-size: 1rem;
   font-weight: 600;
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .item-details-img {
   width: 100%;
-  height: 220px;
+  height: 230px;
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 1rem;
@@ -296,7 +412,13 @@ body {
 
 .details-infos {
   list-style: none;
-  padding: 0;
+  padding: 1rem;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+  background-color: var(--light);
+  border-radius: 6px;
 }
 
 /* ----- Formulaire d'inscription ----- */
@@ -307,7 +429,7 @@ body {
   padding: 2rem;
   border: 2px solid var(--dark);
   border-top: 6px solid var(--primary);
-  border-radius: 8px;
+  border-radius: var(--radius);
 }
 
 .inscription-box .form-label {
@@ -318,11 +440,12 @@ body {
 .site-footer {
   background-color: var(--dark);
   color: #dddddd;
-  padding-top: 2.5rem;
+  padding-top: 3rem;
 }
 
 .site-footer .site-logo {
   color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
 .footer-content {
@@ -334,12 +457,14 @@ body {
 
 .footer-text {
   max-width: 350px;
+  font-size: 0.95rem;
 }
 
 .footer-links {
   list-style: none;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 1.2rem;
 }
 
@@ -355,18 +480,47 @@ body {
 .footer-copyright {
   text-align: center;
   border-top: 1px solid #333333;
-  margin: 1.5rem 0 0;
+  margin: 2rem 0 0;
   padding: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  color: #999999;
 }
 
 /* ----- Mobile ----- */
 @media (max-width: 768px) {
   .hero {
-    padding: 3rem 0;
+    padding: 3.5rem 0;
   }
 
   .hero-title {
     font-size: 2rem;
+  }
+
+  .site-header .navbar-nav {
+    padding-top: 0.8rem;
+    gap: 0.3rem;
+  }
+
+  .items-section {
+    padding: 2.5rem 0;
+  }
+
+  .page-banner {
+    padding: 2rem 0;
+  }
+
+  /* les filtres prennent toute la largeur sur mobile */
+  .filter-bar,
+  .filter-bar .form-select,
+  .filter-bar .btn {
+    width: 100%;
+  }
+
+  .details-infos {
+    grid-template-columns: 1fr;
+  }
+
+  .inscription-box {
+    padding: 1.25rem;
   }
 }

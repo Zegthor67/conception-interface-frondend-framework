@@ -5,7 +5,7 @@ function NotFound() {
     <div className="container py-5 text-center">
       <h1>404</h1>
       <p>Cette page n'existe pas.</p>
-      <Link to="/" className="btn btn-primary">
+      <Link to="/" className="btn btn-main">
         Retour à l'accueil
       </Link>
     </div>

@@ -11,7 +11,7 @@ function Hero() {
         </p>
 
         <div className="hero-buttons">
-          <Link to="/projets" className="btn btn-warning btn-lg">
+          <Link to="/projets" className="btn btn-yellow btn-lg">
             Nos projets
           </Link>
           <Link to="/formations" className="btn btn-outline-light btn-lg">

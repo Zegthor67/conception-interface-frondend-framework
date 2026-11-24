@@ -27,7 +27,7 @@ function ProjectDetails({ project }) {
       <h3>Technologies</h3>
       <TechList technologies={project.technologies} />
 
-      <a href={project.url} target="_blank" rel="noreferrer" className="btn btn-danger mt-3">
+      <a href={project.url} target="_blank" rel="noreferrer" className="btn btn-main mt-3">
         Voir le site
       </a>
     </div>

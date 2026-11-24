@@ -8,10 +8,20 @@ import Loader from './Loader'
  *   error: string|null,
  *   items: object[],
  *   renderItem: (item: object) => React.ReactNode,
+ *   totalCount: number,
+ *   itemLabel: string,
  *   emptyMessage?: string
  * }} props
  */
-function ResultsGrid({ isLoading, error, items, renderItem, emptyMessage = 'Aucun résultat.' }) {
+function ResultsGrid({
+  isLoading,
+  error,
+  items,
+  renderItem,
+  totalCount,
+  itemLabel,
+  emptyMessage = 'Aucun résultat.',
+}) {
   if (isLoading) {
     return <Loader />
   }
@@ -29,13 +39,20 @@ function ResultsGrid({ isLoading, error, items, renderItem, emptyMessage = 'Aucu
   }
 
   return (
-    <div className="row g-4">
-      {items.map((item) => (
-        <div className="col-12 col-md-6 col-lg-4" key={item.id}>
-          {renderItem(item)}
-        </div>
-      ))}
-    </div>
+    <>
+      <p className="results-count">
+        {totalCount} {itemLabel}
+        {totalCount > 1 ? 's' : ''}
+      </p>
+
+      <div className="row g-4">
+        {items.map((item) => (
+          <div className="col-12 col-md-6 col-lg-4" key={item.id}>
+            {renderItem(item)}
+          </div>
+        ))}
+      </div>
+    </>
   )
 }
 
