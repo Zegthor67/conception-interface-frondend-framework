@@ -4,3 +4,90 @@ body {
   background-color: #f6f7fb;
   color: #1f2433;
 }
+
+/* Le footer reste en bas même si la page est courte */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+}
+
+/* ----- Header ----- */
+.site-header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #1f2433;
+  text-decoration: none;
+}
+
+.site-logo span {
+  color: #2f6fed;
+}
+
+.site-header .nav-link {
+  font-weight: 500;
+  color: #4a5068;
+}
+
+.site-header .nav-link.active,
+.site-header .nav-link:hover {
+  color: #2f6fed;
+}
+
+/* ----- Footer ----- */
+.site-footer {
+  background-color: #1f2433;
+  color: #c9cddb;
+  padding-top: 2.5rem;
+}
+
+.site-footer .site-logo {
+  color: #ffffff;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.footer-text {
+  max-width: 350px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-links a {
+  color: #c9cddb;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-copyright {
+  text-align: center;
+  border-top: 1px solid #343a50;
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
