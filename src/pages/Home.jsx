@@ -1,8 +1,10 @@
+import Hero from '../components/Hero'
+
 function Home() {
   return (
-    <div className="container py-5">
-      <h1>Accueil</h1>
-    </div>
+    <>
+      <Hero />
+    </>
   )
 }
 
