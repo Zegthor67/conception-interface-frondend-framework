@@ -99,6 +99,18 @@ body {
   color: #666666;
 }
 
+/* ----- Bandeau en haut des pages ----- */
+.page-banner {
+  background-color: var(--dark);
+  color: #ffffff;
+  padding: 3rem 0;
+  border-bottom: 6px solid var(--secondary);
+}
+
+.page-banner h1 {
+  font-weight: 700;
+}
+
 /* ----- Sections projets / formations ----- */
 .items-section {
   padding: 4rem 0;
