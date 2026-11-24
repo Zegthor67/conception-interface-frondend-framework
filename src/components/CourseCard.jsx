@@ -1,8 +1,6 @@
 import TechList from './TechList'
 
 /**
- * Carte d'une formation.
- *
  * @param {{
  *   course: { title: string, category: string, level: string, duration: string,
  *     price: number, rating: number, image: string, technologies: string[],

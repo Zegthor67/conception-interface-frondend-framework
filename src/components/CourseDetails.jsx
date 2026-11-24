@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom'
 import TechList from './TechList'
 
 /**
- * Contenu affiché dans la modal quand on ouvre une formation.
- * Le bouton d'inscription renvoie vers le formulaire avec la formation déjà choisie.
- *
  * @param {{ course: object }} props
  */
 function CourseDetails({ course }) {

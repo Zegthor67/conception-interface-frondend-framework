@@ -1,7 +1,4 @@
 /**
- * Spinner affiché pendant le chargement des données.
- * On utilise le spinner de Bootstrap.
- *
  * @param {{ message?: string }} props
  */
 function Loader({ message = 'Chargement...' }) {

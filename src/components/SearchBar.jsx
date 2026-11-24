@@ -1,8 +1,4 @@
 /**
- * Champ de recherche réutilisable (projets et formations).
- * Le composant ne garde pas d'état : c'est le parent qui gère la valeur,
- * ce qui permet de filtrer la liste en temps réel à chaque frappe.
- *
  * @param {{
  *   value: string,
  *   onChange: (value: string) => void,

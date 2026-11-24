@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom'
 import { NAV_LINKS } from '../config/constants'
 
 function Header() {
-  // Menu burger ouvert ou non (sur mobile)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const closeMenu = () => setIsMenuOpen(false)

@@ -1,8 +1,6 @@
 import TechList from './TechList'
 
 /**
- * Carte d'un projet client.
- *
  * @param {{
  *   project: { title: string, client: string, category: string, year: number,
  *     image: string, description: string, technologies: string[] },

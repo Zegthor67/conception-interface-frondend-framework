@@ -1,7 +1,4 @@
 /**
- * Liste de badges pour afficher des technologies.
- * Utilisée dans les cartes et dans les détails (projets et formations).
- *
  * @param {{ technologies?: string[] }} props
  */
 function TechList({ technologies = [] }) {

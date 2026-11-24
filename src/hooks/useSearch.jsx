@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 
-// Valeurs des filtres au départ (rien de sélectionné)
 const INITIAL_FILTERS = {
   category: '',
   level: '',
@@ -36,12 +35,10 @@ function useSearch(items = [], searchFields = ['title']) {
     setFilters(INITIAL_FILTERS)
   }
 
-  // On recalcule la liste seulement si la recherche, les filtres ou les données changent
   const results = useMemo(() => {
     const search = query.trim().toLowerCase()
 
     return items.filter((item) => {
-      // Le texte doit apparaître dans au moins un des champs choisis
       const matchesSearch =
         search === '' ||
         searchFields.some((field) =>
@@ -50,7 +47,6 @@ function useSearch(items = [], searchFields = ['title']) {
 
       const matchesCategory = !filters.category || item.category === filters.category
       const matchesLevel = !filters.level || item.level === filters.level
-      // technologies est un tableau dans les deux API
       const matchesTechnology =
         !filters.technology || item.technologies?.includes(filters.technology)
 

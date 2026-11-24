@@ -1,10 +1,6 @@
 import { useEffect } from 'react'
 
 /**
- * Fenêtre modale réutilisable. Le contenu est passé en children,
- * ce qui permet de s'en servir pour un projet comme pour une formation.
- * Elle se ferme avec le bouton, la touche Échap ou un clic sur le fond.
- *
  * @param {{
  *   isOpen: boolean,
  *   onClose: () => void,

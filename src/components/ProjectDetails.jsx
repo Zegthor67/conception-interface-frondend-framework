@@ -1,8 +1,6 @@
 import TechList from './TechList'
 
 /**
- * Contenu affiché dans la modal quand on ouvre un projet.
- *
  * @param {{ project: object }} props
  */
 function ProjectDetails({ project }) {

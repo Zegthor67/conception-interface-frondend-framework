@@ -1,4 +1,3 @@
-// Libellé affiché pour chaque type de filtre possible
 const FILTER_LABELS = {
   category: 'Toutes les catégories',
   level: 'Tous les niveaux',
@@ -6,10 +5,7 @@ const FILTER_LABELS = {
 }
 
 /**
- * Barre de filtres réutilisable.
- * On ne passe que les listes dont on a besoin : les projets utilisent
- * categories + technologies, les formations ajoutent levels.
- * Un <select> est affiché pour chaque liste reçue.
+ * Affiche un select seulement pour les listes passées en props.
  *
  * @param {{
  *   categories?: string[],
@@ -21,7 +17,6 @@ const FILTER_LABELS = {
  * }} props
  */
 function FilterBar({ categories, levels, technologies, values, onFilterChange, onReset }) {
-  // On garde uniquement les filtres pour lesquels une liste a été passée
   const filters = [
     { name: 'category', options: categories },
     { name: 'level', options: levels },
