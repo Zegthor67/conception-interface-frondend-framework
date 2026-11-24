@@ -168,6 +168,22 @@ body {
   }
 }
 
+/* ----- Recherche et filtres ----- */
+.search-bar {
+  flex: 1 1 250px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filter-bar .form-select {
+  width: auto;
+  min-width: 180px;
+}
+
 /* ----- Footer ----- */
 .site-footer {
   background-color: #1f2433;
