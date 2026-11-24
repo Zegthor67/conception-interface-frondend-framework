@@ -117,6 +117,137 @@ body {
   min-width: 180px;
 }
 
+/* ----- Cartes projets / formations ----- */
+.item-card {
+  height: 100%;
+  border: 2px solid var(--dark);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.item-card:hover {
+  border-color: var(--primary);
+}
+
+.item-card-img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.item-category {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: var(--dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+
+.item-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0.6rem 0 0.3rem;
+}
+
+.item-info {
+  color: #666666;
+  font-size: 0.9rem;
+}
+
+.item-description {
+  font-size: 0.95rem;
+}
+
+.item-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.item-price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tech-badge {
+  background-color: var(--dark);
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ----- Modal ----- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.modal-box {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  border-top: 6px solid var(--primary);
+}
+
+.modal-header-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.modal-header-custom h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.modal-body-custom {
+  padding: 1.5rem;
+}
+
+.item-details h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.2rem;
+}
+
+.item-details-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.details-infos {
+  list-style: none;
+  padding: 0;
+}
+
 /* ----- Footer ----- */
 .site-footer {
   background-color: var(--dark);
