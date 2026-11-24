@@ -14,7 +14,11 @@
  *   children?: React.ReactNode
  * }} props
  */
+// "as" est renommé en Field avec une majuscule : en JSX, <Field /> avec une variable
+// en majuscule permet d'afficher la balise contenue dedans ('input', 'select' ou 'textarea').
+// ...fieldProps récupère toutes les autres props pour les donner directement au champ.
 function FormField({ label, name, as: Field = 'input', error, children, ...fieldProps }) {
+  // Bootstrap utilise form-select pour les select et form-control pour le reste
   const baseClass = Field === 'select' ? 'form-select' : 'form-control'
 
   return (

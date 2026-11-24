@@ -1,6 +1,11 @@
+// Lettres (avec accents grâce à À-ÿ), apostrophe, espace et tiret, entre 2 et 50 caractères
 const NAME_REGEX = /^[a-zA-ZÀ-ÿ' -]{2,50}$/
+// texte sans espace ni @, puis @, puis un domaine avec au moins un point
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 // Numéro français : 0612345678, 06 12 34 56 78, +33612345678...
+// (?:\+33\s?|0) -> commence par +33 ou par 0
+// [1-9]          -> premier chiffre après (pas de 00)
+// (?:[\s.-]?\d{2}){4} -> puis 4 paires de chiffres, avec un espace, un point ou un tiret possible entre
 const PHONE_REGEX = /^(?:\+33\s?|0)[1-9](?:[\s.-]?\d{2}){4}$/
 const MESSAGE_MAX_LENGTH = 500
 

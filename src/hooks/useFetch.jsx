@@ -14,7 +14,9 @@ function useFetch(url) {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    // Permet d'annuler la requête si le composant est démonté avant la réponse
+    // AbortController sert à annuler le fetch en cours.
+    // Si on quitte la page avant la réponse, le composant est démonté et on ne doit
+    // plus faire de setState dessus, sinon React affiche un warning.
     const controller = new AbortController()
 
     async function fetchData() {
@@ -31,7 +33,8 @@ function useFetch(url) {
         const json = await response.json()
         setData(json)
       } catch (err) {
-        // Une requête annulée n'est pas une vraie erreur, on l'ignore
+        // Quand on annule, fetch lance une erreur "AbortError".
+        // Ce n'est pas un vrai problème donc on ne l'affiche pas à l'utilisateur.
         if (err.name !== 'AbortError') {
           setError(err.message || 'Impossible de charger les données')
         }
@@ -44,6 +47,8 @@ function useFetch(url) {
 
     fetchData()
 
+    // Fonction de nettoyage : React l'appelle quand le composant est démonté
+    // ou quand l'url change, et c'est là qu'on annule la requête
     return () => controller.abort()
   }, [url])
 
