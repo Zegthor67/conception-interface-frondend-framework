@@ -299,6 +299,21 @@ body {
   padding: 0;
 }
 
+/* ----- Formulaire d'inscription ----- */
+.inscription-box {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border: 2px solid var(--dark);
+  border-top: 6px solid var(--primary);
+  border-radius: 8px;
+}
+
+.inscription-box .form-label {
+  font-weight: 500;
+}
+
 /* ----- Footer ----- */
 .site-footer {
   background-color: var(--dark);
